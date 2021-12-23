@@ -1,2 +1,2 @@
-# amass_preprocess
+# AMASS preprocess
 Preprocess and visualise Amass dataset.
