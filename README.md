@@ -1,5 +1,7 @@
 # AMASS preprocess
-In this repository, we provide the code for preprocessing and visulization of the Amass dataset. 
+- In this repository, we provide the code for preprocessing and visulization of the Amass dataset. 
+- Preprocessing includes (1) saving parameters into .h5py format, (2) unifying the frame-per-second.
+- Also, we introduce how to rotate the motion for the augmentation.
 
 ## Pre-requisites
 1. Download ALL "SMPL-X Gender Specific" body information from the [official webpage of AMASS dataset](https://amass.is.tue.mpg.de).
@@ -32,12 +34,36 @@ conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11
 ```
 - Modify requirements.txt. The pytorch version should be same as the one you installed
 - And run `pip install -r requirements.txt` again in the folder of `human_body_prior`.
-- If you get error regarding `gcc` and `boost`, try to install it.
-- i.e, `sudo apt install g++-7` or `sudo apt-get install libboost-all-dev`...
+- If you get error regarding `gcc` and `boost`, try to install it. i.e, `sudo apt-get install libboost-all-dev`...
+- And install the human_body_prior.
+```
+cd ${This Repository}/human_body_prior
+python setup.py develop
+```
 
 4. Install PyRender
 - Follow the description in [Link](https://pyrender.readthedocs.io/en/latest/install/index.html#osmesa)
 
 5. Download Gender-Specific [SMPL-X](https://smpl-x.is.tue.mpg.de/download.php) models.
-- Download SMPL with "removed head bun" for AMASS dataset.
+- Download SMPL-X with "removed head bun" for AMASS dataset.
+- Put SMPL-X into folder of `${This Repository}/body_models/smplx`, as below tree.
+```
+├── body_models/
+│   ├── smplx/
+│     ├── female/
+│     ├── male/
+│     ├── neutral/
+│     ├── version.txt
+└── README.md
+```
 
+6. Install other Dependencies
+```
+pip install h5py matplotlib 
+```
+
+8. Install jupyter notebook and add the activated conda environment.
+```
+pip install jupyter notebook
+python -m ipykernel install --user --name=amass
+```
