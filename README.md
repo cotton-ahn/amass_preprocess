@@ -56,8 +56,16 @@ python setup.py develop
 │     ├── version.txt
 └── README.md
 ```
+6. Install [body_visualizer](https://github.com/nghorbani/body_visualizer)
+```
+cd ${This Repository}
+git clone https://github.com/nghorbani/body_visualizer
+cd body_visualizer
+pip install -r requirements.txt
+python setup.py develop
+```
 
-6. Install other Dependencies
+7. Install other Dependencies
 ```
 pip install h5py matplotlib 
 ```
