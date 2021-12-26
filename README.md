@@ -1,7 +1,7 @@
 # AMASS preprocess
 - In this repository, we provide the code for preprocessing and visulization of the Amass dataset. 
-- Preprocessing includes (1) saving parameters into .h5py format, (2) unifying the frame-per-second.
-- Also, we introduce how to rotate the motion for the augmentation.
+- Preprocessing includes (1) saving parameters into .h5py format, (2) reduce the frame-per-second to 30hz.
+- Also, we introduce how to rotate the motion for the augmentation. Refer to Rotate_hdf5.ipynb
 
 ## Pre-requisites
 1. Download ALL "SMPL-X Gender Specific" body information from the [official webpage of AMASS dataset](https://amass.is.tue.mpg.de).
@@ -75,3 +75,10 @@ pip install h5py matplotlib
 pip install jupyter notebook
 python -m ipykernel install --user --name=amass
 ```
+
+## How to use
+1. Run Preprocess_hdf5.ipynb to save downloaded .npz data into .hdf5
+  - properly change `amass_dir` and `h5py_dir`.
+
+2. Refer to Visualize_hdf5.ipynb to see how the saved hdf5 file work.
+3. Refer to Rotate_hdf5.ipynb to see how to rotate the augment the given motion
