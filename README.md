@@ -17,13 +17,13 @@ conda activate amass
 
 2. Clone this Repository.
 ```
-https://github.com/cotton-ahn/amass_preprocess
+git clone https://github.com/cotton-ahn/amass_preprocess
 cd amass_preprocess
 ```
 
 3. Install [Human_Body_Prior](https://github.com/nghorbani/human_body_prior)
 ```
-https://github.com/nghorbani/human_body_prior
+git clone https://github.com/nghorbani/human_body_prior
 cd human_body_prior
 pip install -r requirements.txt
 ```
